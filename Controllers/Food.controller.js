@@ -73,7 +73,9 @@ async function searchFood(req, res){
   
       // Iterate through all query parameters and add them to the filters
       for (const key in req.query) {
-        filters[key] = req.query[key];
+        if (req.query[key] !== '') {
+          filters[key] = req.query[key];
+        }
       }
   
       // Use the filters to build the Mongoose query
