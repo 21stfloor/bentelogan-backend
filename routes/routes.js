@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const studentController = require('../controllers/User.controller');
-const foodController = require('../controllers/Food.controller');
+const studentController = require('../Controllers/User.controller');
+const foodController = require('../Controllers/Food.controller');
 
 router.post('/students', [], studentController.createStudent);
 router.get('/students/:studentId', [], studentController.readStudent);
