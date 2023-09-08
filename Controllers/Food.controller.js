@@ -74,7 +74,8 @@ async function searchFood(req, res){
       // Iterate through all query parameters and add them to the filters
       for (const key in req.query) {
         if (req.query[key] !== '') {
-          filters[key] = req.query[key];
+          // Use a case-insensitive regex for matching
+          filters[key] = { $regex: new RegExp(req.query[key], 'i') };
         }
       }
   
